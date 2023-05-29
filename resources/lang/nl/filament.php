@@ -23,6 +23,12 @@ return [
                 'plural' => 'Projecten',
                 'singular' => 'Project',
             ]
+        ],
+        'task' => [
+            'labels' => [
+                'plural' => 'Taken',
+                'singular' => 'Taak',
+            ]
         ]
     ]
 ];

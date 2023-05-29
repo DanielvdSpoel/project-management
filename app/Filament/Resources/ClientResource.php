@@ -2,11 +2,10 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\RelationManagers\TasksRelationManager;
 use App\Filament\Resources\ClientResource\Pages;
 use App\Models\Client;
 use Filament\Forms\Components\Fieldset;
-use Filament\Forms\Components\Placeholder;
-use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -89,6 +88,13 @@ class ClientResource extends Resource
             'index' => Pages\ListClients::route('/'),
             'create' => Pages\CreateClient::route('/create'),
             'edit' => Pages\EditClient::route('/{record}/edit'),
+        ];
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            TasksRelationManager::class,
         ];
     }
 

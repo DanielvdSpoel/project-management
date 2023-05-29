@@ -16,5 +16,7 @@ return [
     'description' => 'Omschrijving',
     'no_description' => 'Geen omschrijving',
     'client' => 'Klant',
+    'status' => 'Status',
+    'priority' => 'Prioriteit',
 
 ];

@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\RelationManagers\TasksRelationManager;
 use App\Filament\Resources\projectResource\Pages;
 use App\Models\project;
 use Filament\Forms\Components\Placeholder;
@@ -85,6 +86,13 @@ class ProjectResource extends Resource
             'index' => Pages\Listprojects::route('/'),
             'create' => Pages\Createproject::route('/create'),
             'edit' => Pages\Editproject::route('/{record}/edit'),
+        ];
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            TasksRelationManager::class,
         ];
     }
 
