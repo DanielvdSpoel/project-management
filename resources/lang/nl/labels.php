@@ -7,4 +7,9 @@ return [
     'active' => 'Actief',
     'roles' => 'Rollen',
     'phone_number' => 'Telefoonnummer',
+    'address_details' => 'Adresgegevens',
+    'street' => 'Straat',
+    'house_number' => 'Huisnummer',
+    'postal_code' => 'Postcode',
+    'city' => 'Plaats',
 ];

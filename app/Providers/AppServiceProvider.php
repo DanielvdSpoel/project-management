@@ -30,6 +30,12 @@ class AppServiceProvider extends ServiceProvider
             Filament::registerViteTheme('resources/css/filament.css');
         });
 
+
+        Filament::registerNavigationGroups([
+            trans('filament.navigation_groups.project_management'),
+            trans('filament.navigation_groups.administration'),
+        ]);
+
         FilamentEnvironmentIndicator::configureUsing(function (FilamentEnvironmentIndicator $indicator) {
             $indicator->visible = fn () => ! App::environment('production');
         }, isImportant: true);
