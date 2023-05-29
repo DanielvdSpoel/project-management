@@ -13,4 +13,8 @@ return [
     'postal_code' => 'Postcode',
     'city' => 'Plaats',
     'random_joke' => 'Willekeurige mop',
+    'description' => 'Omschrijving',
+    'no_description' => 'Geen omschrijving',
+    'client' => 'Klant',
+
 ];

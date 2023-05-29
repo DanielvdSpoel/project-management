@@ -17,6 +17,12 @@ return [
                 'plural' => 'Klanten',
                 'singular' => 'Klant',
             ]
+        ],
+        'project' => [
+            'labels' => [
+                'plural' => 'Projecten',
+                'singular' => 'Project',
+            ]
         ]
     ]
 ];
