@@ -12,4 +12,5 @@ return [
     'house_number' => 'Huisnummer',
     'postal_code' => 'Postcode',
     'city' => 'Plaats',
+    'random_joke' => 'Willekeurige mop',
 ];

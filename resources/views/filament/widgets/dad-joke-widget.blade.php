@@ -1,7 +1,7 @@
 <x-filament::widget>
     <x-filament::card>
         <div class="relative">
-            <h2 class="mb-10 text-center text-xl font-bold tracking-tight sm:text-xl">{{ __('Random Joke') }}</h2>
+            <h2 class="mb-10 text-center text-xl font-bold tracking-tight sm:text-xl">{{ __('labels.random_joke')}}</h2>
             <blockquote class="mt-4">
                 <svg
                     class="text-primary-600 absolute top-0 left-0 h-8 w-8 -translate-x-3 -translate-y-2 transform"
