@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/test', function () {
+   $project = Project::find(1);
+   $project->employees()->attach(1);
+   dd($project->employees);
+});
 
 Route::redirect('/', '/admin');
 Route::redirect('/login', '/admin/login')->name('login');

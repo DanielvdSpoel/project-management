@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\RelationManagers\TasksRelationManager;
 use App\Filament\Resources\projectResource\Pages;
 use App\Models\project;
+use App\Models\User;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -56,6 +57,12 @@ class ProjectResource extends Resource
 
                 Textarea::make('description')
                     ->label(__('labels.description')),
+
+                Select::make('employees')
+                    ->label(__('labels.employees'))
+                    ->relationship('employees', 'name')
+                    ->multiple()
+                    ->searchable(),
             ]);
     }
 

@@ -7,6 +7,7 @@ use App\Enums\TaskStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Task extends Model
@@ -31,5 +32,10 @@ class Task extends Model
     public function commentable(): MorphTo
     {
         return $this->morphTo();
+    }
+
+    public function employees(): MorphToMany
+    {
+        return $this->morphToMany(User::class, 'assignable');
     }
 }

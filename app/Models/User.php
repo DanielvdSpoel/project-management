@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use JeffGreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
@@ -48,5 +49,15 @@ class User extends Authenticatable
     public function canAccessFilament(): bool
     {
         return str_ends_with($this->email, '@danielvdspoel.nl') && $this->hasVerifiedEmail();
+    }
+
+    public function projects(): MorphToMany
+    {
+        return $this->morphedByMany(Project::class, 'assignable');
+    }
+
+    public function tasks(): MorphToMany
+    {
+        return $this->morphedByMany(Task::class, 'assignable');
     }
 }

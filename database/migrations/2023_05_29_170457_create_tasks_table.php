@@ -13,8 +13,7 @@ return new class extends Migration {
             $table->text('description')->nullable();
             $table->string('priority');
             $table->string('status');
-            $table->integer('taskable_id')->nullable();
-            $table->string('taskable_type')->nullable();
+            $table->morphs('taskable');
             $table->softDeletes();
             $table->timestamps();
         });

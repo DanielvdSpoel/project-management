@@ -6,6 +6,7 @@ use App\Enums\TaskPriority;
 use App\Enums\TaskStatus;
 use App\Filament\Resources\taskResource\Pages;
 use App\Models\Task;
+use App\Models\User;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
@@ -62,11 +63,18 @@ class TaskResource extends Resource
                 ->options(TaskPriority::array())
                 ->default(TaskPriority::NORMAL)
                 ->required(),
+
             Select::make('status')
                 ->label(__('labels.status'))
                 ->options(TaskStatus::array())
                 ->default(TaskStatus::OPEN)
                 ->required(),
+
+            Select::make('employees')
+                ->label(__('labels.employees'))
+                ->relationship('employees', 'name')
+                ->multiple()
+                ->searchable(),
         ];
     }
 

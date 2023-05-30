@@ -18,5 +18,6 @@ return [
     'client' => 'Klant',
     'status' => 'Status',
     'priority' => 'Prioriteit',
+    'employees' => 'Medewerkers',
 
 ];
