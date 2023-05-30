@@ -11,6 +11,4 @@ enum TaskStatus : string
     case IN_PROGRESS = 'in_progress';
     case ON_HOLD = 'on_hold';
     case CLOSED = 'closed';
-    case CANCELLED = 'cancelled';
-    case REOPENED = 'reopened';
 }

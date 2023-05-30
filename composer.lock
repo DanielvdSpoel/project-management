@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "30f387db955160792c833d200442b886",
+    "content-hash": "f19d5164d305a819f8a7c8bdbbcf3bd3",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -2180,6 +2180,80 @@
                 }
             ],
             "time": "2023-01-17T01:02:51+00:00"
+        },
+        {
+            "name": "invaders-xx/filament-kanban-board",
+            "version": "0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/invaders-xx/filament-kanban-board.git",
+                "reference": "0956386ab0e1f0e610b6dce2e92815c0005109dc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/invaders-xx/filament-kanban-board/zipball/0956386ab0e1f0e610b6dce2e92815c0005109dc",
+                "reference": "0956386ab0e1f0e610b6dce2e92815c0005109dc",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^2.0",
+                "illuminate/contracts": "^8.74|^9.0|^10.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.9.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.8",
+                "nunomaduro/collision": "^6.0|^7.0",
+                "nunomaduro/larastan": "^2.0.1",
+                "orchestra/testbench": "^7.0|^8.0",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9.5|^10.0",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "InvadersXX\\FilamentKanbanBoard\\FilamentKanbanBoardServiceProvider"
+                    ],
+                    "aliases": {
+                        "FilamentKanbanBoard": "InvadersXX\\FilamentKanbanBoard\\Facades\\FilamentKanbanBoard"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "InvadersXX\\FilamentKanbanBoard\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Vincent",
+                    "email": "envahisseur@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Add a Kanban page to filament",
+            "homepage": "https://github.com/invaders-xx/filament-kanban-board",
+            "keywords": [
+                "filament",
+                "filament-kanban-board",
+                "invaders-xx",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/invaders-xx/filament-kanban-board/issues",
+                "source": "https://github.com/invaders-xx/filament-kanban-board/tree/0.4"
+            },
+            "time": "2023-03-02T06:50:34+00:00"
         },
         {
             "name": "jeffgreco13/filament-breezy",

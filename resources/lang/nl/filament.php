@@ -4,6 +4,11 @@ return [
         'administration' => 'Administratie',
         'project_management' => 'Projectbeheer',
     ],
+    'pages' => [
+        'task_board' => [
+            'title' => 'Taken overzicht'
+        ]
+    ],
     'resources' => [
         'user' => [
             'password_hint' => 'Laat leeg om het wachtwoord niet te wijzigen.',
