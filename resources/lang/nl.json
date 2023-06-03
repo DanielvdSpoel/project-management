@@ -42,5 +42,6 @@
     "closed": "gesloten",
     "on_hold": "in wacht",
     "reopened": "heropend",
-    "cancelled": "geannuleerd"
+    "cancelled": "geannuleerd",
+    "task": "taak"
 }

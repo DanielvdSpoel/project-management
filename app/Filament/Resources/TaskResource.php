@@ -5,10 +5,17 @@ namespace App\Filament\Resources;
 use App\Enums\TaskPriority;
 use App\Enums\TaskStatus;
 use App\Filament\Resources\taskResource\Pages;
+use App\Filament\Widgets\CommentWidget;
+use App\Forms\Components\CommentField;
 use App\Models\Task;
-use App\Models\User;
+use Filament\Forms\Components\Card;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Group;
+use Filament\Forms\Components\MarkdownEditor;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\ViewField;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -44,8 +51,41 @@ class TaskResource extends Resource
     {
         return $form
             ->schema([
-                ...self::simpleCreateForm()
-            ]);
+                Group::make()
+                    ->schema([
+                        Card::make()
+                            ->schema([
+                                Grid::make()->schema([
+                                    TextInput::make('name')
+                                        ->label(__('labels.name'))
+                                        ->required(),
+                                    Select::make('employees')
+                                        ->label(__('labels.employees'))
+                                        ->relationship('employees', 'name')
+                                        ->multiple()
+                                        ->searchable(),
+                                    Select::make('priority')
+                                        ->label(__('labels.priority'))
+                                        ->options(TaskPriority::array())
+                                        ->default(TaskPriority::NORMAL)
+                                        ->required(),
+                                ]),
+                                MarkdownEditor::make('description')
+                                    ->label(__('labels.description'))
+                            ]),
+                        Section::make("Git integration")->collapsible(),
+                        Section::make("Ploi integration")->collapsible(),
+
+                    ])->columnSpan(function (string $context) {
+                        return ($context === 'create') ? 3: 2;
+                    }),
+                Group::make()
+                    ->schema([
+                        ViewField::make('comments')
+                            ->label('')
+                            ->view('filament.widgets.activity-feed')
+                    ])->hiddenOn(['create']),
+            ])->columns(3);
     }
 
     public static function simpleCreateForm(): array

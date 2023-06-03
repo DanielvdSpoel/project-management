@@ -185,6 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Xetaio\Mentions\Providers\MentionServiceProvider::class,
 
         /*
          * Application Service Providers...

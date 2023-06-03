@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\taskResource\Pages;
 
 use App\Filament\Resources\taskResource;
+use App\Filament\Widgets\CommentWidget;
 use Filament\Pages\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
